@@ -188,7 +188,7 @@ def organize(args):
         for item in filtered_item:
             file_path = Path(os.getcwd(), item)
             shutil.move(str(file_path), str(dest_dir))
-            click.echo(f"'{file_path}' successfully moved to '{dest_dir.name}' directory!")
+            click.echo(f"\033[93m'{file_path}'\033[92m successfully moved to \033[93m'{dest_dir.name}'\033[92m directory!\033[0m")
 
     else:
         click.echo(f"\033[91mPattern \033[93m'{args[0]}'\033[91m did not match anything!\033[0m")
