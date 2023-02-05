@@ -5,11 +5,8 @@ import pathlib
 
 HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
-with open(path.join(HERE, 'requirements.txt'), encoding='utf-8') as f:
-    all_reqs = f.read().split('\n')
-
-install_requires = [x.strip() for x in all_reqs if ('git+' not in x) and (not x.startswith('#')) and (not x.startswith('-'))]
-dependency_links = [x.strip().replace('git+', '') for x in all_reqs if 'git+' not in x]
+install_requires = ['click',]
+dependency_links = ['click',]
 
 setup (
  name = 'redh',
